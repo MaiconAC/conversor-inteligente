@@ -4,7 +4,7 @@ public class Conversor extends javax.swing.JFrame {
     float curRealDolar=4.5f, curRealEuro=5, curRealLibra=6;
     float curDolarEuro=1.08f, curDolarLibra=1.30f;
     float curEuroLibra=1.20f;
-    float resultado;
+    double resultado;
 
     public Conversor() {
         initComponents();
@@ -17,13 +17,13 @@ public class Conversor extends javax.swing.JFrame {
         //Valor Real
         if (cmbInicial.getSelectedItem().equals("Reais (R$)")){
             if (cmbFinal.getSelectedItem().equals("Dólares (USD)")){
-                resultado = Float.parseFloat(txtValor.getText()) / curRealDolar;
+                resultado = Double.parseDouble(txtValor.getText()) / curRealDolar;
             } else {
                 if (cmbFinal.getSelectedItem().equals("Euros (€)")){
-                    resultado = Float.parseFloat(txtValor.getText()) / curRealEuro;
+                    resultado = Double.parseDouble(txtValor.getText()) / curRealEuro;
                 } else {
                     if (cmbFinal.getSelectedItem().equals("Libra esterlina (£)")) {
-                        resultado = Float.parseFloat(txtValor.getText()) / curRealLibra;
+                        resultado = Double.parseDouble(txtValor.getText()) / curRealLibra;
                     }
                 }
             }
@@ -32,13 +32,13 @@ public class Conversor extends javax.swing.JFrame {
         //Valor Dólar
         if (cmbInicial.getSelectedItem().equals("Dólares (USD)")){
             if (cmbFinal.getSelectedItem().equals("Reais (R$)")){
-                resultado = Float.parseFloat(txtValor.getText()) * curRealDolar;
+                resultado = Double.parseDouble(txtValor.getText()) * curRealDolar;
             } else {
                 if (cmbFinal.getSelectedItem().equals("Euros (€)")){
-                    resultado = Float.parseFloat(txtValor.getText()) / curDolarEuro;
+                    resultado = Double.parseDouble(txtValor.getText()) / curDolarEuro;
                 } else {
                     if (cmbFinal.getSelectedItem().equals("Libra esterlina (£)")) {
-                        resultado = Float.parseFloat(txtValor.getText()) / curDolarLibra;
+                        resultado = Double.parseDouble(txtValor.getText()) / curDolarLibra;
                     }
                 }
             }
@@ -47,13 +47,13 @@ public class Conversor extends javax.swing.JFrame {
         //Valor Euro
         if (cmbInicial.getSelectedItem().equals("Euros (€)")){
             if (cmbFinal.getSelectedItem().equals("Reais (R$)")){
-                resultado = Float.parseFloat(txtValor.getText()) * curRealEuro;
+                resultado = Double.parseDouble(txtValor.getText()) * curRealEuro;
             } else {
                 if (cmbFinal.getSelectedItem().equals("Dólares (USD)")){
-                    resultado = Float.parseFloat(txtValor.getText()) * curDolarEuro;
+                    resultado = Double.parseDouble(txtValor.getText()) * curDolarEuro;
                 } else {
                     if (cmbFinal.getSelectedItem().equals("Libra esterlina (£)")) {
-                        resultado = Float.parseFloat(txtValor.getText()) / curEuroLibra;
+                        resultado = Double.parseDouble(txtValor.getText()) / curEuroLibra;
                     }
                 }
             }
@@ -62,13 +62,13 @@ public class Conversor extends javax.swing.JFrame {
         //Valor Libra
         if (cmbInicial.getSelectedItem().equals("Libra esterlina (£)")){
             if (cmbFinal.getSelectedItem().equals("Reais (R$)")){
-                resultado = Float.parseFloat(txtValor.getText()) * curRealLibra;
+                resultado = Double.parseDouble(txtValor.getText()) * curRealLibra;
             } else {
                 if (cmbFinal.getSelectedItem().equals("Dólares (USD)")){
-                    resultado = Float.parseFloat(txtValor.getText()) * curDolarLibra;
+                    resultado = Double.parseDouble(txtValor.getText()) * curDolarLibra;
                 } else {
                     if (cmbFinal.getSelectedItem().equals("Euros (€)")) {
-                        resultado = Float.parseFloat(txtValor.getText()) * curEuroLibra;
+                        resultado = Double.parseDouble(txtValor.getText()) * curEuroLibra;
                     }
                 }
             }
@@ -77,23 +77,171 @@ public class Conversor extends javax.swing.JFrame {
     }
 
      public void tratarConversãoMassa(){
+        //Toneladas 
         if (cmbInicialM.getSelectedItem().equals("Toneladas")){
             if (cmbFinalM.getSelectedItem().equals("Toneladas")){
-                resultado = Float.parseFloat(txtValorM.getText());
+                resultado = Double.parseDouble(txtValorM.getText());
             } else if (cmbFinalM.getSelectedItem().equals("Quilogramas (kg)")){
-                resultado = Float.parseFloat(txtValorM.getText()) * 1000f;
+                resultado = Double.parseDouble(txtValorM.getText()) * 1000f;
             } else if (cmbFinalM.getSelectedItem().equals("Hectogramas (hg)")){
-                resultado = Float.parseFloat(txtValorM.getText()) * 10000f;
+                resultado = Double.parseDouble(txtValorM.getText()) * 10000f;
             } else if (cmbFinalM.getSelectedItem().equals("Decagramas (dag)")){
-                resultado = Float.parseFloat(txtValorM.getText()) * 100000f;
+                resultado = Double.parseDouble(txtValorM.getText()) * 100000f;
             } else if (cmbFinalM.getSelectedItem().equals("Gramas (g)")){
-                resultado = Float.parseFloat(txtValorM.getText()) * 1000000f;   
+                resultado = Double.parseDouble(txtValorM.getText()) * 1000000f;   
             } else if (cmbFinalM.getSelectedItem().equals("Decigramas (dg)")){
-                resultado = Float.parseFloat(txtValorM.getText()) * 10000000f;
+                resultado = Double.parseDouble(txtValorM.getText()) * 10000000f;
             } else if (cmbFinalM.getSelectedItem().equals("Centigramas (cg)")){
-                resultado = Float.parseFloat(txtValorM.getText()) * 100000000f;
+                resultado = Double.parseDouble(txtValorM.getText()) * 100000000f;
             } else if (cmbFinalM.getSelectedItem().equals("Miligramas (mg)")){
-                resultado = Float.parseFloat(txtValorM.getText()) * 1000000000f;
+                resultado = Double.parseDouble(txtValorM.getText()) * 1000000000f;
+            }    
+        }
+        
+        //Quilogramas
+        if (cmbInicialM.getSelectedItem().equals("Quilogramas (kg)")){
+            if (cmbFinalM.getSelectedItem().equals("Toneladas")){
+                resultado = Double.parseDouble(txtValorM.getText()) / 1000f;
+            } else if (cmbFinalM.getSelectedItem().equals("Quilogramas (kg)")){
+                resultado = Double.parseDouble(txtValorM.getText());
+            } else if (cmbFinalM.getSelectedItem().equals("Hectogramas (hg)")){
+                resultado = Double.parseDouble(txtValorM.getText()) * 10f;
+            } else if (cmbFinalM.getSelectedItem().equals("Decagramas (dag)")){
+                resultado = Double.parseDouble(txtValorM.getText()) * 100f;
+            } else if (cmbFinalM.getSelectedItem().equals("Gramas (g)")){
+                resultado = Double.parseDouble(txtValorM.getText()) * 1000f;   
+            } else if (cmbFinalM.getSelectedItem().equals("Decigramas (dg)")){
+                resultado = Double.parseDouble(txtValorM.getText()) * 10000f;
+            } else if (cmbFinalM.getSelectedItem().equals("Centigramas (cg)")){
+                resultado = Double.parseDouble(txtValorM.getText()) * 100000f;
+            } else if (cmbFinalM.getSelectedItem().equals("Miligramas (mg)")){
+                resultado = Double.parseDouble(txtValorM.getText()) * 1000000f;
+            }    
+        }
+        
+        //Hectogramas
+        if (cmbInicialM.getSelectedItem().equals("Hectogramas (hg)")){
+            if (cmbFinalM.getSelectedItem().equals("Toneladas")){
+                resultado = Double.parseDouble(txtValorM.getText()) / 10000f;
+            } else if (cmbFinalM.getSelectedItem().equals("Quilogramas (kg)")){
+                resultado = Double.parseDouble(txtValorM.getText()) / 10;
+            } else if (cmbFinalM.getSelectedItem().equals("Hectogramas (hg)")){
+                resultado = Double.parseDouble(txtValorM.getText());
+            } else if (cmbFinalM.getSelectedItem().equals("Decagramas (dag)")){
+                resultado = Double.parseDouble(txtValorM.getText()) * 10f;
+            } else if (cmbFinalM.getSelectedItem().equals("Gramas (g)")){
+                resultado = Double.parseDouble(txtValorM.getText()) * 100f;   
+            } else if (cmbFinalM.getSelectedItem().equals("Decigramas (dg)")){
+                resultado = Double.parseDouble(txtValorM.getText()) * 1000f;
+            } else if (cmbFinalM.getSelectedItem().equals("Centigramas (cg)")){
+                resultado = Double.parseDouble(txtValorM.getText()) * 10000f;
+            } else if (cmbFinalM.getSelectedItem().equals("Miligramas (mg)")){
+                resultado = Double.parseDouble(txtValorM.getText()) * 100000f;
+            }    
+        }
+        
+        //Decagramas
+        if (cmbInicialM.getSelectedItem().equals("Decagramas (dag)")){
+            if (cmbFinalM.getSelectedItem().equals("Toneladas")){
+                resultado = Double.parseDouble(txtValorM.getText()) / 100000f;
+            } else if (cmbFinalM.getSelectedItem().equals("Quilogramas (kg)")){
+                resultado = Double.parseDouble(txtValorM.getText()) / 100f;
+            } else if (cmbFinalM.getSelectedItem().equals("Hectogramas (hg)")){
+                resultado = Double.parseDouble(txtValorM.getText()) / 10f;
+            } else if (cmbFinalM.getSelectedItem().equals("Decagramas (dag)")){
+                resultado = Double.parseDouble(txtValorM.getText());
+            } else if (cmbFinalM.getSelectedItem().equals("Gramas (g)")){
+                resultado = Double.parseDouble(txtValorM.getText()) * 10f;   
+            } else if (cmbFinalM.getSelectedItem().equals("Decigramas (dg)")){
+                resultado = Double.parseDouble(txtValorM.getText()) * 100f;
+            } else if (cmbFinalM.getSelectedItem().equals("Centigramas (cg)")){
+                resultado = Double.parseDouble(txtValorM.getText()) * 1000f;
+            } else if (cmbFinalM.getSelectedItem().equals("Miligramas (mg)")){
+                resultado = Double.parseDouble(txtValorM.getText()) * 10000f;
+            }    
+        }
+        
+        //Gramas
+        if (cmbInicialM.getSelectedItem().equals("Gramas (g)")){
+            if (cmbFinalM.getSelectedItem().equals("Toneladas")){
+                resultado = Double.parseDouble(txtValorM.getText()) / 1000000f;
+            } else if (cmbFinalM.getSelectedItem().equals("Quilogramas (kg)")){
+                resultado = Double.parseDouble(txtValorM.getText()) / 1000f;
+            } else if (cmbFinalM.getSelectedItem().equals("Hectogramas (hg)")){
+                resultado = Double.parseDouble(txtValorM.getText()) / 100f;
+            } else if (cmbFinalM.getSelectedItem().equals("Decagramas (dag)")){
+                resultado = Double.parseDouble(txtValorM.getText()) / 10;
+            } else if (cmbFinalM.getSelectedItem().equals("Gramas (g)")){
+                resultado = Double.parseDouble(txtValorM.getText());   
+            } else if (cmbFinalM.getSelectedItem().equals("Decigramas (dg)")){
+                resultado = Double.parseDouble(txtValorM.getText()) * 10f;
+            } else if (cmbFinalM.getSelectedItem().equals("Centigramas (cg)")){
+                resultado = Double.parseDouble(txtValorM.getText()) * 100f;
+            } else if (cmbFinalM.getSelectedItem().equals("Miligramas (mg)")){
+                resultado = Double.parseDouble(txtValorM.getText()) * 1000f;
+            }    
+        }
+        
+        //Decigramas 
+        if (cmbInicialM.getSelectedItem().equals("Decigramas (dg)")){
+            if (cmbFinalM.getSelectedItem().equals("Toneladas")){
+                resultado = Double.parseDouble(txtValorM.getText()) / 10000000f;
+            } else if (cmbFinalM.getSelectedItem().equals("Quilogramas (kg)")){
+                resultado = Double.parseDouble(txtValorM.getText()) / 10000f;
+            } else if (cmbFinalM.getSelectedItem().equals("Hectogramas (hg)")){
+                resultado = Double.parseDouble(txtValorM.getText()) / 1000f;
+            } else if (cmbFinalM.getSelectedItem().equals("Decagramas (dag)")){
+                resultado = Double.parseDouble(txtValorM.getText()) / 100f;
+            } else if (cmbFinalM.getSelectedItem().equals("Gramas (g)")){
+                resultado = Double.parseDouble(txtValorM.getText()) / 10f;   
+            } else if (cmbFinalM.getSelectedItem().equals("Decigramas (dg)")){
+                resultado = Double.parseDouble(txtValorM.getText());
+            } else if (cmbFinalM.getSelectedItem().equals("Centigramas (cg)")){
+                resultado = Double.parseDouble(txtValorM.getText()) * 10f;
+            } else if (cmbFinalM.getSelectedItem().equals("Miligramas (mg)")){
+                resultado = Double.parseDouble(txtValorM.getText()) * 100f;
+            }    
+        }
+        
+        //Centigramas
+        if (cmbInicialM.getSelectedItem().equals("Centigramas (cg)")){
+            if (cmbFinalM.getSelectedItem().equals("Toneladas")){
+                resultado = Double.parseDouble(txtValorM.getText()) / 100000000f;
+            } else if (cmbFinalM.getSelectedItem().equals("Quilogramas (kg)")){
+                resultado = Double.parseDouble(txtValorM.getText()) / 100000f;
+            } else if (cmbFinalM.getSelectedItem().equals("Hectogramas (hg)")){
+                resultado = Double.parseDouble(txtValorM.getText()) / 10000f;
+            } else if (cmbFinalM.getSelectedItem().equals("Decagramas (dag)")){
+                resultado = Double.parseDouble(txtValorM.getText()) / 1000f;
+            } else if (cmbFinalM.getSelectedItem().equals("Gramas (g)")){
+                resultado = Double.parseDouble(txtValorM.getText()) / 100f;   
+            } else if (cmbFinalM.getSelectedItem().equals("Decigramas (dg)")){
+                resultado = Double.parseDouble(txtValorM.getText()) / 10f;
+            } else if (cmbFinalM.getSelectedItem().equals("Centigramas (cg)")){
+                resultado = Double.parseDouble(txtValorM.getText());
+            } else if (cmbFinalM.getSelectedItem().equals("Miligramas (mg)")){
+                resultado = Double.parseDouble(txtValorM.getText()) * 10f;
+            }    
+        }
+        
+        //Miligramas
+        if (cmbInicialM.getSelectedItem().equals("Miligramas(mg)")){
+            if (cmbFinalM.getSelectedItem().equals("Toneladas")){
+                resultado = Double.parseDouble(txtValorM.getText()) / 1000000000f;
+            } else if (cmbFinalM.getSelectedItem().equals("Quilogramas (kg)")){
+                resultado = Double.parseDouble(txtValorM.getText()) / 1000000f;
+            } else if (cmbFinalM.getSelectedItem().equals("Hectogramas (hg)")){
+                resultado = Double.parseDouble(txtValorM.getText()) / 100000f;
+            } else if (cmbFinalM.getSelectedItem().equals("Decagramas (dag)")){
+                resultado = Double.parseDouble(txtValorM.getText()) / 10000f;
+            } else if (cmbFinalM.getSelectedItem().equals("Gramas (g)")){
+                resultado = Double.parseDouble(txtValorM.getText()) / 1000f;   
+            } else if (cmbFinalM.getSelectedItem().equals("Decigramas (dg)")){
+                resultado = Double.parseDouble(txtValorM.getText()) / 100f;
+            } else if (cmbFinalM.getSelectedItem().equals("Centigramas (cg)")){
+                resultado = Double.parseDouble(txtValorM.getText()) / 10f;
+            } else if (cmbFinalM.getSelectedItem().equals("Miligramas (mg)")){
+                resultado = Double.parseDouble(txtValorM.getText());
             }    
         }
     }
@@ -126,9 +274,6 @@ public class Conversor extends javax.swing.JFrame {
         txtValorM = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         btnConverterM = new javax.swing.JButton();
-        jPanel4 = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
-        jPanel6 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -311,45 +456,6 @@ public class Conversor extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Massa", jPanel3);
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 406, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 220, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("tab2", jPanel4);
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 406, Short.MAX_VALUE)
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 220, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("tab3", jPanel5);
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 406, Short.MAX_VALUE)
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 220, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("tab4", jPanel6);
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -379,12 +485,12 @@ public class Conversor extends javax.swing.JFrame {
 
     private void btnConverterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConverterActionPerformed
         tratarConversãoMoeda();
-        txtResultado.setText(Float.toString(resultado));
+        txtResultado.setText(Double.toString(resultado));
     }//GEN-LAST:event_btnConverterActionPerformed
 
     private void btnConverterMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConverterMActionPerformed
         tratarConversãoMassa();
-        txtResultadoM.setText(Float.toString(resultado));
+        txtResultadoM.setText(Double.toString(resultado));
     }//GEN-LAST:event_btnConverterMActionPerformed
 
     /**
@@ -440,9 +546,6 @@ public class Conversor extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
