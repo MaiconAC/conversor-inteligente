@@ -249,6 +249,142 @@ public class Conversor extends javax.swing.JFrame {
         }
     }
      
+     public void tratarConversãoComprimento(){
+         
+         //Quilômetros
+         if (cmbInicialC.getSelectedItem().equals("Quilômetros (km)")){
+            if (cmbFinalC.getSelectedItem().equals("Quilômetros (km)")){
+                resultado = Double.parseDouble(txtValorC.getText());
+            } else if (cmbFinalC.getSelectedItem().equals("Hectômetros (hm)")){
+                resultado = Double.parseDouble(txtValorC.getText()) * 10f;
+            } else if (cmbFinalC.getSelectedItem().equals("Decâmetros (dam)")){
+                resultado = Double.parseDouble(txtValorC.getText()) * 100f;
+            } else if (cmbFinalC.getSelectedItem().equals("Metros (m)")){
+                resultado = Double.parseDouble(txtValorC.getText()) * 1000f;
+            } else if (cmbFinalC.getSelectedItem().equals("Decímetros (dm)")){
+                resultado = Double.parseDouble(txtValorC.getText()) * 10000f;   
+            } else if (cmbFinalC.getSelectedItem().equals("Centímetros (cm)")){
+                resultado = Double.parseDouble(txtValorC.getText()) * 100000f;
+            } else if (cmbFinalC.getSelectedItem().equals("Milímetros (mm)")){
+                resultado = Double.parseDouble(txtValorC.getText()) * 1000000f;
+            }
+        }
+         
+         //Hectômetros
+         if (cmbInicialC.getSelectedItem().equals("Hectômetros (hm)")){
+            if (cmbFinalC.getSelectedItem().equals("Hectômetros (hm)")){
+                resultado = Double.parseDouble(txtValorC.getText());
+            } else if (cmbFinalC.getSelectedItem().equals("Quilômetros (km)")){
+                resultado = Double.parseDouble(txtValorC.getText()) / 10f;
+            } else if (cmbFinalC.getSelectedItem().equals("Decâmetros (dam)")){
+                resultado = Double.parseDouble(txtValorC.getText()) * 10f;
+            } else if (cmbFinalC.getSelectedItem().equals("Metros (m)")){
+                resultado = Double.parseDouble(txtValorC.getText()) * 100f;
+            } else if (cmbFinalC.getSelectedItem().equals("Decímetros (dm)")){
+                resultado = Double.parseDouble(txtValorC.getText()) * 1000f;   
+            } else if (cmbFinalC.getSelectedItem().equals("Centímetros (cm)")){
+                resultado = Double.parseDouble(txtValorC.getText()) * 10000f;
+            } else if (cmbFinalC.getSelectedItem().equals("Milímetros (mm)")){
+                resultado = Double.parseDouble(txtValorC.getText()) * 100000f;
+            }
+        }
+         
+         //Decâmetros
+         if (cmbInicialC.getSelectedItem().equals("Decâmetros (dam)")){
+            if (cmbFinalC.getSelectedItem().equals("Decâmetros (dam)")){
+                resultado = Double.parseDouble(txtValorC.getText());
+            } else if (cmbFinalC.getSelectedItem().equals("Quilômetros (km)")){
+                resultado = Double.parseDouble(txtValorC.getText()) / 100f;
+            } else if (cmbFinalC.getSelectedItem().equals("Hectômetros (hm)")){
+                resultado = Double.parseDouble(txtValorC.getText()) / 10f;
+            } else if (cmbFinalC.getSelectedItem().equals("Metros (m)")){
+                resultado = Double.parseDouble(txtValorC.getText()) * 10f;
+            } else if (cmbFinalC.getSelectedItem().equals("Decímetros (dm)")){
+                resultado = Double.parseDouble(txtValorC.getText()) * 100f;   
+            } else if (cmbFinalC.getSelectedItem().equals("Centímetros (cm)")){
+                resultado = Double.parseDouble(txtValorC.getText()) * 1000f;
+            } else if (cmbFinalC.getSelectedItem().equals("Milímetros (mm)")){
+                resultado = Double.parseDouble(txtValorC.getText()) * 10000f;
+            }
+        }
+         
+         //Metros
+         if (cmbInicialC.getSelectedItem().equals("Metros (m)")){
+            if (cmbFinalC.getSelectedItem().equals("Metros (m)")){
+                resultado = Double.parseDouble(txtValorC.getText());
+            } else if (cmbFinalC.getSelectedItem().equals("Quilômetros (km)")){
+                resultado = Double.parseDouble(txtValorC.getText()) / 1000f;
+            } else if (cmbFinalC.getSelectedItem().equals("Hectômetros (hm)")){
+                resultado = Double.parseDouble(txtValorC.getText()) / 100f;
+            } else if (cmbFinalC.getSelectedItem().equals("Decâmetros (dam)")){
+                resultado = Double.parseDouble(txtValorC.getText()) / 10f;
+            } else if (cmbFinalC.getSelectedItem().equals("Decímetros (dm)")){
+                resultado = Double.parseDouble(txtValorC.getText()) * 10f;   
+            } else if (cmbFinalC.getSelectedItem().equals("Centímetros (cm)")){
+                resultado = Double.parseDouble(txtValorC.getText()) * 100f;
+            } else if (cmbFinalC.getSelectedItem().equals("Milímetros (mm)")){
+                resultado = Double.parseDouble(txtValorC.getText()) * 1000f;
+            }
+        }
+         
+         //Decímetros
+         if (cmbInicialC.getSelectedItem().equals("Decímetros (dm)")){
+            if (cmbFinalC.getSelectedItem().equals("Decímetros (dm)")){
+                resultado = Double.parseDouble(txtValorC.getText());
+            } else if (cmbFinalC.getSelectedItem().equals("Quilômetros (km)")){
+                resultado = Double.parseDouble(txtValorC.getText()) / 10000f;
+            } else if (cmbFinalC.getSelectedItem().equals("Hectômetros (hm)")){
+                resultado = Double.parseDouble(txtValorC.getText()) / 1000f;
+            } else if (cmbFinalC.getSelectedItem().equals("Decâmetros (dam)")){
+                resultado = Double.parseDouble(txtValorC.getText()) / 100f;
+            } else if (cmbFinalC.getSelectedItem().equals("Metros (m)")){
+                resultado = Double.parseDouble(txtValorC.getText()) / 10f;   
+            } else if (cmbFinalC.getSelectedItem().equals("Centímetros (cm)")){
+                resultado = Double.parseDouble(txtValorC.getText()) * 10f;
+            } else if (cmbFinalC.getSelectedItem().equals("Milímetros (mm)")){
+                resultado = Double.parseDouble(txtValorC.getText()) * 100f;
+            }
+        }
+         
+         //Centímetros
+         if (cmbInicialC.getSelectedItem().equals("Centímetros (cm)")){
+            if (cmbFinalC.getSelectedItem().equals("Centímetros (cm)")){
+                resultado = Double.parseDouble(txtValorC.getText());
+            } else if (cmbFinalC.getSelectedItem().equals("Quilômetros (km)")){
+                resultado = Double.parseDouble(txtValorC.getText()) / 100000f;
+            } else if (cmbFinalC.getSelectedItem().equals("Hectômetros (hm)")){
+                resultado = Double.parseDouble(txtValorC.getText()) / 10000f;
+            } else if (cmbFinalC.getSelectedItem().equals("Decâmetros (dam)")){
+                resultado = Double.parseDouble(txtValorC.getText()) / 1000f;
+            } else if (cmbFinalC.getSelectedItem().equals("Metros (m)")){
+                resultado = Double.parseDouble(txtValorC.getText()) / 100f;   
+            } else if (cmbFinalC.getSelectedItem().equals("Decímetros (dm)")){
+                resultado = Double.parseDouble(txtValorC.getText()) / 10f;
+            } else if (cmbFinalC.getSelectedItem().equals("Milímetros (mm)")){
+                resultado = Double.parseDouble(txtValorC.getText()) * 10f;
+            }
+        }
+         
+         //Milímetros
+         if (cmbInicialC.getSelectedItem().equals("Milímetros (mm)")){
+            if (cmbFinalC.getSelectedItem().equals("Milímetros (mm)")){
+                resultado = Double.parseDouble(txtValorC.getText());
+            } else if (cmbFinalC.getSelectedItem().equals("Quilômetros (km)")){
+                resultado = Double.parseDouble(txtValorC.getText()) / 1000000f;
+            } else if (cmbFinalC.getSelectedItem().equals("Hectômetros (hm)")){
+                resultado = Double.parseDouble(txtValorC.getText()) / 100000f;
+            } else if (cmbFinalC.getSelectedItem().equals("Decâmetros (dam)")){
+                resultado = Double.parseDouble(txtValorC.getText()) / 10000f;
+            } else if (cmbFinalC.getSelectedItem().equals("Metros (m)")){
+                resultado = Double.parseDouble(txtValorC.getText()) / 1000f;   
+            } else if (cmbFinalC.getSelectedItem().equals("Decímetros (dm)")){
+                resultado = Double.parseDouble(txtValorC.getText()) / 100f;
+            } else if (cmbFinalC.getSelectedItem().equals("Centímetros (cm)")){
+                resultado = Double.parseDouble(txtValorC.getText()) / 10f;
+            }
+        }
+     }
+     
      public void tratarConversãoTemperatura(){
          if (cmbInicialT.getSelectedItem().equals("Celsius (°C)")){
              temperatura1 = Double.parseDouble(txtValorT.getText()) + 273;
@@ -302,6 +438,17 @@ public class Conversor extends javax.swing.JFrame {
         txtValorM = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         btnConverterM = new javax.swing.JButton();
+        jPanel6 = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
+        cmbFinalC = new javax.swing.JComboBox<>();
+        cmbInicialC = new javax.swing.JComboBox<>();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        txtResultadoC = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        txtValorC = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        btnConverterC = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         cmbInicialT = new javax.swing.JComboBox<>();
@@ -524,6 +671,123 @@ public class Conversor extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Massa", jPanel3);
 
+        cmbFinalC.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Quilômetros (km)", "Hectômetros (hm)", "Decâmetros (dam)", "Metros (m)", "Decímetros (dm)", "Centímetros (cm)", "Milímetros (mm)" }));
+
+        cmbInicialC.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Quilômetros (km)", "Hectômetros (hm)", "Decâmetros (dam)", "Metros (m)", "Decímetros (dm)", "Centímetros (cm)", "Milímetros (mm)" }));
+
+        jLabel11.setText("Converter de");
+
+        jLabel12.setText("Para");
+
+        txtResultadoC.setEditable(false);
+
+        jLabel13.setText("Valor: ");
+
+        jLabel14.setText("Resultado da Conversão ");
+
+        btnConverterC.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnConverterC.setText("Converter");
+        btnConverterC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConverterCActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addGap(73, 73, 73)
+                                .addComponent(jLabel11)
+                                .addGap(74, 74, 74))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(cmbInicialC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(33, 33, 33)))
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(cmbFinalC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                                .addComponent(jLabel12)
+                                .addGap(64, 64, 64))))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addGap(91, 91, 91)
+                                .addComponent(jLabel13)
+                                .addGap(73, 73, 73))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(txtValorC, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtResultadoC, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel14)
+                                .addGap(11, 11, 11))))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(158, 158, 158)
+                        .addComponent(btnConverterC)))
+                .addGap(44, 44, 44))
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel12))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cmbInicialC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmbFinalC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addComponent(jLabel13)
+                        .addGap(28, 28, 28))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addComponent(jLabel14)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtResultadoC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtValorC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addComponent(btnConverterC)
+                .addGap(27, 27, 27))
+        );
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 406, Short.MAX_VALUE)
+            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel6Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 220, Short.MAX_VALUE)
+            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel6Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        jTabbedPane1.addTab("Comprimento", jPanel6);
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -662,6 +926,11 @@ public class Conversor extends javax.swing.JFrame {
         tratarConversãoTemperatura();
     }//GEN-LAST:event_btnConverterTActionPerformed
 
+    private void btnConverterCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConverterCActionPerformed
+        tratarConversãoComprimento();
+        txtResultadoC.setText(Double.toString(resultado));
+    }//GEN-LAST:event_btnConverterCActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -699,14 +968,21 @@ public class Conversor extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnConverter;
+    private javax.swing.JButton btnConverterC;
     private javax.swing.JButton btnConverterM;
     private javax.swing.JButton btnConverterT;
     private javax.swing.JComboBox<String> cmbFinal;
+    private javax.swing.JComboBox<String> cmbFinalC;
     private javax.swing.JComboBox<String> cmbFinalM;
     private javax.swing.JComboBox<String> cmbInicial;
+    private javax.swing.JComboBox<String> cmbInicialC;
     private javax.swing.JComboBox<String> cmbInicialM;
     private javax.swing.JComboBox<String> cmbInicialT;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -720,16 +996,20 @@ public class Conversor extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JLabel lblTemp1;
     private javax.swing.JLabel lblTemp2;
     private javax.swing.JTextField txtResultado;
+    private javax.swing.JTextField txtResultadoC;
     private javax.swing.JTextField txtResultadoM;
     private javax.swing.JTextField txtResultadoT1;
     private javax.swing.JTextField txtResultadoT2;
     private javax.swing.JTextField txtValor;
+    private javax.swing.JTextField txtValorC;
     private javax.swing.JTextField txtValorM;
     private javax.swing.JTextField txtValorT;
     // End of variables declaration//GEN-END:variables
