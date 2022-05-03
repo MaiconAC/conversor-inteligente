@@ -13,6 +13,10 @@ public class Conversor extends javax.swing.JFrame {
         cmbFinalM.setSelectedIndex(-1);
         cmbInicialM.setSelectedIndex(-1);
         cmbInicialT.setSelectedIndex(-1);
+        cmbInicialC.setSelectedIndex(-1);
+        cmbFinalC.setSelectedIndex(-1);
+        cmbInicialA.setSelectedIndex(-1);
+        cmbFinalA.setSelectedIndex(-1);
     }
     
     public void tratarConversãoMoeda(){
@@ -79,7 +83,7 @@ public class Conversor extends javax.swing.JFrame {
             
     }
 
-     public void tratarConversãoMassa(){
+    public void tratarConversãoMassa(){
         //Toneladas 
         if (cmbInicialM.getSelectedItem().equals("Toneladas")){
             if (cmbFinalM.getSelectedItem().equals("Toneladas")){
@@ -249,7 +253,7 @@ public class Conversor extends javax.swing.JFrame {
         }
     }
      
-     public void tratarConversãoComprimento(){
+    public void tratarConversãoComprimento(){
          
          //Quilômetros
          if (cmbInicialC.getSelectedItem().equals("Quilômetros (km)")){
@@ -385,7 +389,62 @@ public class Conversor extends javax.swing.JFrame {
         }
      }
      
-     public void tratarConversãoTemperatura(){
+    public void tratarConversãoÁrea(){
+        
+        //Quilômetro quadrado
+        if (cmbInicialA.getSelectedItem().equals("Quilômetros quadrados (km²)")){
+            if (cmbFinalA.getSelectedItem().equals("Quilômetros quadrados (km²)")){
+                resultado = Double.parseDouble(txtValorA.getText());
+            } else if (cmbFinalA.getSelectedItem().equals("Metros quadrados (m²)")){
+                resultado = Double.parseDouble(txtValorA.getText()) * 1000000f;
+            } else if (cmbFinalA.getSelectedItem().equals("Hectares")){
+                resultado = Double.parseDouble(txtValorA.getText()) * 100f;
+            } else if (cmbFinalA.getSelectedItem().equals("Centímetros quadrados (cm²)")){
+                resultado = Double.parseDouble(txtValorA.getText()) * Math.pow(10,10);
+            }
+        }
+        
+        //Metro quadrado
+        if (cmbInicialA.getSelectedItem().equals("Metros quadrados (m²)")){
+            if (cmbFinalA.getSelectedItem().equals("Metros quadrados (m²)")){
+                resultado = Double.parseDouble(txtValorA.getText());
+            } else if (cmbFinalA.getSelectedItem().equals("Quilômetros quadrados (km²)")){
+                resultado = Double.parseDouble(txtValorA.getText()) / 1000000f;
+            } else if (cmbFinalA.getSelectedItem().equals("Hectares")){
+                resultado = Double.parseDouble(txtValorA.getText()) / 10000f;
+            } else if (cmbFinalA.getSelectedItem().equals("Centímetros quadrados (cm²)")){
+                resultado = Double.parseDouble(txtValorA.getText()) * 10000f;
+            }
+        }
+        
+        //Hectare
+        if (cmbInicialA.getSelectedItem().equals("Hectares")){
+            if (cmbFinalA.getSelectedItem().equals("Hectares")){
+                resultado = Double.parseDouble(txtValorA.getText());
+            } else if (cmbFinalA.getSelectedItem().equals("Quilômetros quadrados (km²)")){
+                resultado = Double.parseDouble(txtValorA.getText()) / 100f;
+            } else if (cmbFinalA.getSelectedItem().equals("Metros quadrados (m²)")){
+                resultado = Double.parseDouble(txtValorA.getText()) * 10000f;
+            } else if (cmbFinalA.getSelectedItem().equals("Centímetros quadrados (cm²)")){
+                resultado = Double.parseDouble(txtValorA.getText()) * Math.pow(10,8);
+            }
+        }
+        
+        //Centímetro quadrado
+        if (cmbInicialA.getSelectedItem().equals("Centímetros quadrados (cm²)")){
+            if (cmbFinalA.getSelectedItem().equals("Centímetros quadrados (cm²)")){
+                resultado = Double.parseDouble(txtValorA.getText());
+            } else if (cmbFinalA.getSelectedItem().equals("Quilômetros quadrados (km²)")){
+                resultado = Double.parseDouble(txtValorA.getText()) / Math.pow(10,10);
+            } else if (cmbFinalA.getSelectedItem().equals("Metros quadrados (m²)")){
+                resultado = Double.parseDouble(txtValorA.getText()) / 10000f;
+            } else if (cmbFinalA.getSelectedItem().equals("Hectares")){
+                resultado = Double.parseDouble(txtValorA.getText()) / Math.pow(10,8);
+            }
+        }
+    } 
+     
+    public void tratarConversãoTemperatura(){
          if (cmbInicialT.getSelectedItem().equals("Celsius (°C)")){
              temperatura1 = Double.parseDouble(txtValorT.getText()) + 273;
              temperatura2 = (Double.parseDouble(txtValorT.getText()) * 1.8f) + 32;
@@ -449,6 +508,17 @@ public class Conversor extends javax.swing.JFrame {
         txtValorC = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         btnConverterC = new javax.swing.JButton();
+        jPanel9 = new javax.swing.JPanel();
+        jPanel10 = new javax.swing.JPanel();
+        cmbFinalA = new javax.swing.JComboBox<>();
+        cmbInicialA = new javax.swing.JComboBox<>();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        txtResultadoA = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        txtValorA = new javax.swing.JTextField();
+        jLabel18 = new javax.swing.JLabel();
+        btnConverterA = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         cmbInicialT = new javax.swing.JComboBox<>();
@@ -602,12 +672,12 @@ public class Conversor extends javax.swing.JFrame {
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addGap(91, 91, 91)
-                                .addComponent(jLabel8)
-                                .addGap(73, 73, 73))
+                                .addGap(44, 44, 44)
+                                .addComponent(txtValorM, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(txtValorM, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jLabel8)
+                                .addGap(66, 66, 66)))
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel7Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -633,16 +703,13 @@ public class Conversor extends javax.swing.JFrame {
                     .addComponent(cmbInicialM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cmbFinalM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jLabel8)
-                        .addGap(28, 28, 28))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jLabel9)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtResultadoM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtValorM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel8))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtResultadoM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtValorM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addComponent(btnConverterM)
                 .addGap(27, 27, 27))
@@ -652,7 +719,7 @@ public class Conversor extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 406, Short.MAX_VALUE)
+            .addGap(0, 411, Short.MAX_VALUE)
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel3Layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -719,12 +786,12 @@ public class Conversor extends javax.swing.JFrame {
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel8Layout.createSequentialGroup()
-                                .addGap(91, 91, 91)
-                                .addComponent(jLabel13)
-                                .addGap(73, 73, 73))
+                                .addGap(44, 44, 44)
+                                .addComponent(txtValorC, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(txtValorC, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jLabel13)
+                                .addGap(66, 66, 66)))
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel8Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -750,16 +817,13 @@ public class Conversor extends javax.swing.JFrame {
                     .addComponent(cmbInicialC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cmbFinalC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addComponent(jLabel13)
-                        .addGap(28, 28, 28))
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addComponent(jLabel14)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtResultadoC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtValorC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14)
+                    .addComponent(jLabel13))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtResultadoC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtValorC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addComponent(btnConverterC)
                 .addGap(27, 27, 27))
@@ -769,7 +833,7 @@ public class Conversor extends javax.swing.JFrame {
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 406, Short.MAX_VALUE)
+            .addGap(0, 411, Short.MAX_VALUE)
             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel6Layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -787,6 +851,114 @@ public class Conversor extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Comprimento", jPanel6);
+
+        cmbFinalA.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Quilômetros quadrados (km²)", "Metros quadrados (m²)", "Centímetros quadrados (cm²)", "Hectares" }));
+
+        cmbInicialA.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Quilômetros quadrados (km²)", "Metros quadrados (m²)", "Centímetros quadrados (cm²)", "Hectares" }));
+
+        jLabel15.setText("Converter de");
+
+        jLabel16.setText("Para");
+
+        txtResultadoA.setEditable(false);
+
+        jLabel17.setText("Valor: ");
+
+        jLabel18.setText("Resultado da Conversão ");
+
+        btnConverterA.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnConverterA.setText("Converter");
+        btnConverterA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConverterAActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGap(73, 73, 73)
+                .addComponent(jLabel15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel16)
+                .addGap(103, 103, 103))
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(cmbInicialA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(cmbFinalA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel10Layout.createSequentialGroup()
+                                .addGap(44, 44, 44)
+                                .addComponent(txtValorA, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel17)
+                                .addGap(66, 66, 66)))
+                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel10Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtResultadoA, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel18)
+                                .addGap(11, 11, 11))))
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGap(158, 158, 158)
+                        .addComponent(btnConverterA)))
+                .addContainerGap(11, Short.MAX_VALUE))
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(jLabel16))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cmbInicialA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmbFinalA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel18)
+                    .addComponent(jLabel17))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtResultadoA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtValorA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addComponent(btnConverterA)
+                .addGap(27, 27, 27))
+        );
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 411, Short.MAX_VALUE)
+            .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel9Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 220, Short.MAX_VALUE)
+            .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel9Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        jTabbedPane1.addTab("Área", jPanel9);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -879,7 +1051,7 @@ public class Conversor extends javax.swing.JFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 406, Short.MAX_VALUE)
+            .addGap(0, 411, Short.MAX_VALUE)
             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel4Layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -931,6 +1103,11 @@ public class Conversor extends javax.swing.JFrame {
         txtResultadoC.setText(Double.toString(resultado));
     }//GEN-LAST:event_btnConverterCActionPerformed
 
+    private void btnConverterAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConverterAActionPerformed
+        tratarConversãoÁrea();
+        txtResultadoA.setText(Double.toString(resultado));
+    }//GEN-LAST:event_btnConverterAActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -968,13 +1145,16 @@ public class Conversor extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnConverter;
+    private javax.swing.JButton btnConverterA;
     private javax.swing.JButton btnConverterC;
     private javax.swing.JButton btnConverterM;
     private javax.swing.JButton btnConverterT;
     private javax.swing.JComboBox<String> cmbFinal;
+    private javax.swing.JComboBox<String> cmbFinalA;
     private javax.swing.JComboBox<String> cmbFinalC;
     private javax.swing.JComboBox<String> cmbFinalM;
     private javax.swing.JComboBox<String> cmbInicial;
+    private javax.swing.JComboBox<String> cmbInicialA;
     private javax.swing.JComboBox<String> cmbInicialC;
     private javax.swing.JComboBox<String> cmbInicialM;
     private javax.swing.JComboBox<String> cmbInicialT;
@@ -983,6 +1163,10 @@ public class Conversor extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -992,6 +1176,7 @@ public class Conversor extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -999,16 +1184,19 @@ public class Conversor extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JLabel lblTemp1;
     private javax.swing.JLabel lblTemp2;
     private javax.swing.JTextField txtResultado;
+    private javax.swing.JTextField txtResultadoA;
     private javax.swing.JTextField txtResultadoC;
     private javax.swing.JTextField txtResultadoM;
     private javax.swing.JTextField txtResultadoT1;
     private javax.swing.JTextField txtResultadoT2;
     private javax.swing.JTextField txtValor;
+    private javax.swing.JTextField txtValorA;
     private javax.swing.JTextField txtValorC;
     private javax.swing.JTextField txtValorM;
     private javax.swing.JTextField txtValorT;
